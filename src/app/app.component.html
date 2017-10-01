@@ -1,3 +1,30 @@
-<h1>
-  {{title}}
-</h1>
+<ngb-carousel [style.width]="'900px'">
+  <ng-template ngbSlide>
+    <img src="https://lorempixel.com/900/500?r=1" alt="Random first slide">
+    <div class="carousel-caption">
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <img src="https://lorempixel.com/900/500?r=2" alt="Random second slide">
+    <div class="carousel-caption">
+      <h3>Second slide label</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <img src="https://lorempixel.com/900/500?r=3" alt="Random third slide">
+    <div class="carousel-caption">
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
+<ngb-rating [(rate)]="currentRate">
+  <ng-template let-fill="fill">
+    <span class="star" [class.filled]="fill === 100">&#9733;</span>
+  </ng-template>
+</ngb-rating>
+<hr>
+<pre>Rate: <b>{{currentRate || 0}}</b></pre>
